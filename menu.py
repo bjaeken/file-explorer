@@ -14,7 +14,7 @@ class Menu:
         self.get_input()
 
     def get_input(self):
-        input("Where do you want to go?  ")
+        input("Where do you want to go? ")
  
 if __name__ == "__main__":
     menu = Menu()
