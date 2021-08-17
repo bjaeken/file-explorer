@@ -7,11 +7,11 @@ class Explorer:
         return self.path
     
     def get_content(self):
-        test = ""
-        for x in range(10):
-            test += str(x) + "\n"
+        content = ""
+        for item in range(10):
+            content += str(item) + "\n"
 
-        return test
+        return content
     
     def fetch_content(path):
         print("fetching")
