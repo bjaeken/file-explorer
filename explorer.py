@@ -3,7 +3,7 @@ from pathlib import Path
 
 class Explorer:
     def __init__(self):
-        self.path = "/home/pi"
+        self.path = "/home/pi/Pictures"
         self.lib = Path(self.path)
         self.content = list()
         self.fetch_content()
@@ -13,8 +13,11 @@ class Explorer:
     
     def get_content(self):
         items = ""
-        for item in self.content:
-            items += item.__str__()
+        if len(self.content) > 0:
+            for item in self.content:
+                items += item.__str__()
+        else:
+            items += "- This folder is empty\n"
 
         return items
     
