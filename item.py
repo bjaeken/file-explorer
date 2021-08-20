@@ -5,4 +5,4 @@ class Item:
         self.size = size
     
     def __str__(self):
-        return f'{self.name} - {"directory" if self.is_directory else "file"} - size {self.size}'
+        return f'/ {self.name} - {"directory" if self.is_directory else "file"} - size {self.size}kb\n'
