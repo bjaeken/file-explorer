@@ -3,13 +3,22 @@ from pathlib import Path
 
 class Explorer:
     def __init__(self):
-        self.path = "/home/pi/Pictures"
+        self.path = "/"
         self.lib = Path(self.path)
         self.content = list()
         self.fetch_content()
 
     def get_path(self):
         return self.path
+
+    def set_path(self, new_path):
+        if new_path == "/":
+            self.path = self.path[:-(self.path[::-1].find('/') + 1)]
+        else:    
+            self.path += F"/{new_path}"
+
+        self.lib = Path(self.path)
+        self.fetch_content()
     
     def get_content(self):
         items = ""
@@ -23,7 +32,7 @@ class Explorer:
     
     def fetch_content(self):
         self.content.clear()
-
+    
         if self.lib.is_dir():
             for item in self.lib.glob("*"):
                 if self.check_hidden_item(item):
