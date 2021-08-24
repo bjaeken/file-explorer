@@ -24,7 +24,7 @@ class Explorer:
         items = ""
         if len(self.content) > 0:
             for item in self.content:
-                items += item.__str__()
+                items += str(item)
         else:
             items += "- This folder is empty\n"
 
